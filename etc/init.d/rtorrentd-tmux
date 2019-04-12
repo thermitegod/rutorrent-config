@@ -1,0 +1,32 @@
+#!/sbin/openrc-run
+# Copyright 1999-2018 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+depend() {
+	use net ypbind nis
+	after slapd mysqld postgresql lighttpd php-fmp
+}
+
+start() {
+	ebegin "Starting rtorrent"
+	start-stop-daemon \
+		--start \
+		--user $USER \
+		--exec /usr/bin/tmux -- new -s rt -d \
+			/usr/bin/rtorrent -n -o import=/home/brandon/.config/rtorrent/rtorrent.conf
+	pgrep rtorrent > "/run/rtorrentd.pid"
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping rtorrent"
+	start-stop-daemon \
+		--stop \
+		--signal 15 \
+		--pidfile "/run/rtorrentd.pid"
+	einfo "Giving time to stop..."
+	einfo "Stopping in 5 seconds"
+	sleep 5 #give time to stop
+	eend $?
+}
