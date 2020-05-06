@@ -1,0 +1,35 @@
+#!/sbin/openrc-run
+# Copyright 1999-2020 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+PIDFILE=/run/rtorrentd.pid
+
+depend() {
+	use net ypbind nis
+	after slapd mysqld postgresql lighttpd php-fmp
+}
+
+start() {
+	ebegin "Starting rtorrent"
+	start-stop-daemon \
+		--start \
+		--pidfile "${PIDFILE}" \
+		--background \
+		--make-pidfile \
+		--user "${USER}" \
+		--name rtorrent \
+		--exec /usr/bin/screen -- -D -m -S rtorrentd /usr/bin/rtorrent -n -o import="${CONFIG}"
+	eend $?
+}
+
+stop() {
+	ebegin "Stopping rtorrent"
+	# Because we've daemonized with screen, we need to replace the PID file with the real PID of rtorrent
+	pgrep -P $(cat "${PIDFILE}") >| "${PIDFILE}"
+
+	start-stop-daemon \
+		--stop \
+		--signal 15 \
+		--pidfile "${PIDFILE}"
+	eend $?
+}
