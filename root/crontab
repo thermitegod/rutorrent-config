@@ -1,0 +1,8 @@
+#crontab
+
+@reboot mount /tmp
+@reboot mount /var/cache/edb
+@reboot sleep 1;/etc/init.d/devfs start
+
+@reboot sleep 30;/etc/init.d/cronie stop
+
