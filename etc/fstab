@@ -1,0 +1,4 @@
+tmpfs	/tmp		tmpfs	nodev,nosuid,noatime,async,size=10G,mode=0777	0 0
+tmpfs	/run		tmpfs	nodev,nosuid,noatime,async,size=10M,mode=0777	0 0
+tmpfs	/var/cache/edb	tmpfs	nodev,nosuid,noatime,async,size=200M		0 0
+tmpfs	/dev/shm	tmpfs	rw,nodev,nosuid,noexec,mode=1777,size=1024M	0 0
