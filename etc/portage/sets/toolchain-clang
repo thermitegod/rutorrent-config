@@ -1,0 +1,29 @@
+#clang toolchain
+sys-devel/clang
+sys-devel/clang-runtime
+sys-libs/libcxx
+sys-libs/libcxxabi
+sys-libs/llvm-libunwind
+sys-devel/llvm
+dev-util/cmake
+sys-devel/llvmgold
+sys-devel/llvm-common
+sys-libs/libomp
+sys-devel/lld
+#kinda clang
+dev-util/re2c
+sys-libs/binutils-libs
+dev-util/ninja
+#standard toolchain minus gcc
+sys-devel/binutils
+sys-kernel/linux-headers
+sys-libs/zlib
+dev-libs/gmp
+dev-libs/mpfr
+dev-libs/mpc
+dev-libs/glib
+#only part of toolchain that still
+#builds w/ gcc no need to rebuild.
+#keep for ref
+#sys-libs/timezone-data
+#sys-libs/glibc

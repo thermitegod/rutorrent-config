@@ -1,0 +1,61 @@
+#other
+app-arch/libarchive -e2fsprogs
+app-arch/unzip -bzip2
+sys-libs/timezone-data zic-slim
+dev-libs/libffi -test-bhaible
+dev-libs/libxml2 -python
+
+#net
+mail-mta/nullmailer -ssl
+net-misc/iputils -arping
+sys-apps/iproute2 -iptables
+sys-apps/net-tools -arp
+net-misc/curl -http2 -imap -pop3 -smtp -ftp -tftp -adns -progress-meter
+net-misc/rsync xxhash system-zlib
+
+#toolchain, same flags as main to avoid building multiple times
+sys-devel/binutils -gold -default-gold
+sys-devel/clang default-libcxx default-compiler-rt default-lld -static-analyzer
+sys-devel/clang-runtime libcxx -sanitize
+sys-devel/gcc lto pgo -fortran -sanitize
+sys-devel/llvm gold -libffi
+sys-libs/glibc custom-cflags -multiarch
+sys-libs/libomp offload ompt
+
+#sys
+sys-apps/shadow -su
+sys-process/procps -kill
+sys-apps/util-linux kill su -cramfs -tty-helpers
+sys-libs/ncurses -minimal
+sys-auth/pambase -passwdqc
+sys-fs/eudev -kmod -hwdb
+
+#langs
+dev-lang/python:3.9 -gdbm
+
+#min
+sys-apps/debianutils -installkernel
+app-arch/xz-utils -extra-filters
+
+#portage
+app-portage/layman sync-plugin-portage
+sys-apps/portage -rsync-verify
+
+#tools
+app-editors/nano ncurses -magic -spell
+app-shells/bash -net
+dev-lang/perl ithreads
+dev-vcs/git curl -webdav -pcre-jit -perl -gpg
+sys-apps/less -less-select -lesspipe
+sys-process/cronie -anacron
+
+#rtorrent
+app-eselect/eselect-php fpm
+dev-lang/php fpm gd cgi xmlrpc xmlreader xmlwriter sockets ldap pcntl readline pdo -phar -flatfile
+#dev-libs/boost python
+#net-libs/libtorrent-rasterbar -geoip
+net-nds/openldap -syslog -tcpd
+net-p2p/rtorrent xmlrpc
+www-apps/rutorrent vhosts
+www-servers/lighttpd php -minimal -gdbm
+

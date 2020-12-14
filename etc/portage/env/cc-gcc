@@ -1,0 +1,8 @@
+#gcc
+CC="/usr/bin/gcc"
+CXX="/usr/bin/g++"
+CPP="/usr/bin/cpp"
+AR="/usr/bin/ar"
+NM="/usr/bin/nm"
+RANLIB="/usr/bin/ranlib"
+LD="/usr/bin/ld.lld"

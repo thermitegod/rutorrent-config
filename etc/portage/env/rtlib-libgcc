@@ -1,0 +1,4 @@
+#some packages fail with compiler-rt
+CFLAGS="${CFLAGS} --rtlib=libgcc"
+CXXFLAGS="${CFLAGS}"
+LDFLAGS="${LDFLAGS} ${CFLAGS}"

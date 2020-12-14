@@ -1,0 +1,7 @@
+#mask repo
+sys-apps/gawk::poly-c
+sys-apps/baselayout::poly-c
+sys-apps/shadow::poly-c
+sys-apps/portage::poly-c
+dev-libs/libxml2::poly-c
+

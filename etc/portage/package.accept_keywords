@@ -1,0 +1,10 @@
+#live
+www-apps/rutorrent **
+app-shells/zsh-syntax-highlighting **
+sys-libs/zlib ** # uses zlib-ng git in ::thermite
+
+#unmask newest
+#sys-devel/gcc **
+#I know what you are thinking, dont.
+<sys-libs/glibc-9999 **
+

@@ -1,0 +1,17 @@
+-*sys-fs/e2fsprogs
+-*sys-libs/e2fsprogs-libs
+
+-*virtual/man
+-*virtual/modutils
+-*virtual/pager
+
+-*sys-apps/man-pages
+-*sys-apps/man-pages-posix
+
+-*virtual/ssh
+-*net-misc/openssh
+
+#-*
+#-*
+#-*
+

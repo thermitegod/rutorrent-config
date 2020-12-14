@@ -1,0 +1,4 @@
+#disable lto
+CFLAGS="${CFLAGS} -fno-lto"
+CXXFLAGS="${CFLAGS} -fno-lto"
+LDFLAGS="${LDFLAGS} ${CFLAGS}"

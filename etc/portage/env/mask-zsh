@@ -1,0 +1,16 @@
+#mask non-linux completions
+INSTALL_MASK="
+${INSTALL_MASK}
+/bin/zsh-*
+/usr/share/zsh/*/help
+/usr/share/zsh/*/functions/Completion/Solaris
+/usr/share/zsh/*/functions/Completion/Redhat
+/usr/share/zsh/*/functions/Completion/Mandriva
+/usr/share/zsh/*/functions/Completion/Debian
+/usr/share/zsh/*/functions/Completion/Darwin
+/usr/share/zsh/*/functions/Completion/Cygwin
+/usr/share/zsh/*/functions/Completion/BSD
+/usr/share/zsh/*/functions/Completion/AIX
+/usr/share/zsh/*/functions/Completion/openSUSE
+"
+PKG_INSTALL_MASK="${INSTALL_MASK}"
