@@ -37,8 +37,8 @@ lxc config set dev-gentoo-clang-minimal security.privileged true
 ### Gentoo portage setup
 ```
 lxc config device add dev-gentoo-clang-minimal repos disk source=/var/db/repos path=/var/db/repos
-lxc config device add dev-gentoo-clang-minimal distfiles disk source=/var/cache/distfiles path=/var/distfiles
-lxc config device add dev-gentoo-clang-minimal packages disk source=/var/cache/packages path=/var/packages
+lxc config device add dev-gentoo-clang-minimal distfiles disk source=/var/distfiles path=/var/distfiles
+lxc config device add dev-gentoo-clang-minimal packages disk source=/var/packages path=/var/packages
 ```
 
 ### Using openrc-init
